@@ -59,4 +59,23 @@ Processor: Intel Core i7
 
 Memory: 16 GB
 
+Storage: 100 GB free space
+
+
+Software Requirements
+
+Operating system: Mac OS X, Microsoft Windows, or Linux
+
+
+
+Browser: Chrome https://www.google.com/chrome/browser/
+
+
+
+## Related Products
+* [Learn JavaScript: Build Your Own Blockchain [Video]](https://www.packtpub.com/application-development/learn-javascript-build-your-own-blockchain-video?utm_source=github&utm_medium=repository&utm_campaign=9781789612516)
+
+* [Blockchain Development for Beginners [Video]](https://www.packtpub.com/big-data-and-business-intelligence/blockchain-development-beginners-video?utm_source=github&utm_medium=repository&utm_campaign=9781788830911)
+
+* [Blockchain Application Development in 7 Days [Video]](https://www.packtpub.com/application-development/blockchain-application-development-7-days-video?utm_source=github&utm_medium=repository&utm_campaign=9781789341942)
 
