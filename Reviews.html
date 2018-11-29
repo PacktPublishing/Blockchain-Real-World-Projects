@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" href="main.css">
+  <title></title>
+</head>
+
+<body>
+  <header>
+   
+  </header>
+
+  <main id="contact">
+
+    <h1 class="lg-heading">
+   Hello
+      <span class="text-secondary">World</span>
+    </h1>
+    
+
+
+
+
+
+
+
+        <!--This is the box set for writing the review (writeReview) @Owner :Sriharsha_Bingi-->
+
+
+
+
+    <h2 class="sm-heading">
+    
+    </h2>
+    <div class="boxes">
+      <div>
+        <span class="text-secondary"type="text">String: </span> 
+        <input id= "Writing"type="text"  size= "4000" style="font-size: 18pt; height: 40px; width:280px;  background: transparent;border-color: #eece1a;">
+      </div>
+      
+      <button align="top"id="resumeborder" onclick="setting()" href="#"  style="height:auto;width:auto;font-size:200%; color:#eece1a;font-family:courier; background-color: Transparent;" class="button hvr-float-shadow">SET IT !</button>
+
+
+
+      
+    </div>
+    </div>
+      
+      <button align="top"id="resumeborder1" onclick="getting()" href="#"  style="height:auto;width:auto;font-size:200%; color:#eece1a;font-family:courier; background-color: Transparent;" class="button hvr-float-shadow">GET IT !</button>
+
+      
+
+      
+    </div>
+
+
+
+
+
+  
+
+
+
+
+    <div class="boxes">
+      <div>
+
+        <span id="checkresult" style="margin: 10px auto;position: relative;"class="text-secondary">TxHash: </span>
+         
+      
+
+      </div>
+    </div class="boxes">
+
+
+
+
+
+
+
+
+
+
+    <br>
+    <br>
+    <br>
+
+
+  </main>
+
+
+ <script>
+      
+
+         
+         web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
+        
+
+        //web3.eth.defaultAccount = web3.eth.accounts[0];
+
+         var ticketcontract = web3.eth.contract([
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "set",
+				"type": "string"
+			}
+		],
+		"name": "setEntry",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getEntry",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+]);         
+            var ver= web3.version;
+            console.log(ver);
+         //  var contractAddress= '0xfc0cb00994131ed82294df63a3152979a44dbb09';
+           //var reviewingc = web3.eth.contract(abi,contractAddress);
+           var exhi = ticketcontract.at('0x866de14da14478f7478d0880766902a1aca40542');//here goes the address where we deployed the contract
+        console.log(exhi);
+
+
+    //   $("#button").click(function () {     // on clicking the button the following code executes
+  //  $("#load").show();
+
+  async function setting() {
+    
+    var Write = document.getElementById("Writing").value;
+    
+    
+    
+ 
+
+
+  await exhi.setEntry.sendTransaction(
+    Write,
+{from:'0x42ebc1A106544bC58F1186Ad2ae6273de85B37cc',gasPrice:web3.toWei(50, 'Gwei'),gas: 5000000},
+(error,result) => {
+    if(error) {
+        return console.log(error);
+         
+    }
+    console.log("HASH: " + result);
+    document.getElementById('checkresult').innerHTML = "TxHash: "+result;
+    
+}
+    );
+    //exhi.WriteReview(document.getElementById("name1").value,{from : document.getElementById("dress").value},function(error,result){ console.log(result) })
+    
+
+  }
+
+   
+
+// the address from which they are seeing they should create a transaction. so add a box which autofills the address of contract interactor.
+async function getting() {
+ 
+  
+    await  exhi.getEntry
+    .call(
+      
+      {from:'0x42ebc1A106544bC58F1186Ad2ae6273de85B37cc',gasPrice:web3.toWei(400, 'Gwei'),gasLimit: "21000"},
+(error,result) => {
+    if(error) {
+        return console.log(error);
+    }
+    console.log("Review you searched: " + result);
+    document.getElementById('checkresult').innerHTML = "Review: "+result;
+}
+    );
+}
+      
+    
+
+
+
+
+
+     
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,312 @@
+
+
+
+<!--
+Front end for DAPP.
+Here we create few textboxes and buttons required.
+Then we link the buttons with the solidity functions.
+we can interact with the smartcontract on blockchain using web3.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link href="newIndividual.css" rel="stylesheet">
+
+    <script src="./node_modules/web3/dist/web3.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+
+        <h1>Contest WebPage !</h1>
+
+        <h2 id="contest"></h2>
+
+       
+
+        <label for="Eth" class="col-lg-2 control-label">Ethereum Address</label>
+        <input id="dress" type="text">
+
+        <label for="Name" class="col-lg-2 control-label">Name</label>
+        <input id="name1" type="text">
+
+        <label for="Amount" class="col-lg-2 control-label">Amount</label>
+        <input id="amnt" type="text">
+
+        <label for="email" class="col-lg-2 control-label">Email</label>
+        <input id="mail1" type="text">
+
+        <label for="Number" class="col-lg-2 control-label">Phone.No</label>
+        <input id="number1" type="text">
+
+        
+
+        
+         <a href="#" onclick="registering()" class="btn btn-primary">Register</a>
+
+
+
+         <h1>Participants</h1>
+
+         <h2 id="Participants1"></h2>
+
+
+        <button id="P1">Registered Participants !</button>
+ <a href="#" onclick="blah()" class="btn btn-primary">Registered Participants !</a>
+
+         
+
+        <h1>The Winner is </h1>
+        
+        <input id="winner1" type="text">
+        <button id="w1">Pick the Winner !</button>
+
+
+          <h1>Transfer Prize Amount</h1>
+          <input id="Transfering" type="text">
+         <button id="d">Transfer Amount !</button>
+
+
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+    <script>
+      
+
+
+
+        window.addEventListener('load', function () {       
+  if (typeof web3 !== 'undefined') {
+    window.web3 = new Web3(web3.currentProvider);           // we are using chrome with metamask extension.
+    console.log("MetaMask Injected......!");
+    window.web3.eth.getAccounts((err, accounts) => {
+      document.getElementById("dress").value = accounts[0];
+      window.web3.eth.getBalance(accounts[0], (err, bal) => {
+        document.getElementById("amnt").value = 1;
+      });
+    });
+
+    } else {
+    console.log('No web3? You should consider trying MetaMask!')
+    //window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545")); 
+  }
+})
+
+
+
+        
+
+        //web3.eth.defaultAccount = web3.eth.accounts[0];
+
+         var ticketcontract = web3.eth.contract([
+    {
+        "constant": false,
+        "inputs": [],
+        "name": "pickWinner",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "name": "rece",
+                "type": "string"
+            }
+        ],
+        "name": "receipti",
+        "type": "event"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "_name",
+                "type": "string"
+            },
+            {
+                "name": "_phone",
+                "type": "string"
+            },
+            {
+                "name": "_email",
+                "type": "string"
+            }
+        ],
+        "name": "registration",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            },
+            {
+                "name": "",
+                "type": "string"
+            },
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": true,
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [],
+        "name": "transferAmount",
+        "outputs": [],
+        "payable": true,
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "getIsWinnerSelected",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "getOrganizer",
+        "outputs": [
+            {
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "getParticipants",
+        "outputs": [
+            {
+                "name": "",
+                "type": "address[]"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "r",
+                "type": "uint256"
+            }
+        ],
+        "name": "getting",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "pure",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "getWinner",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    }
+]);
+          var exhi = ticketcontract.at('0xd27cf087b2d9c19883d1f338abcb7a78027cfeae');//here goes the address where we deployed the contract
+        console.log(exhi);
+
+
+    //   $("#button").click(function () {     // on clicking the button the following code executes
+  //  $("#load").show();
+  var partiP = {};
+  function registering() {
+    
+    var eth2 = document.getElementById("dress").value;
+    var amount2 = document.getElementById("amnt").value;
+    var name2 = document.getElementById("name1").value;
+    var number2 = document.getElementById("number1").value;
+    var mail2 = document.getElementById("mail1").value;
+    console.log(name2);
+    console.log(number2);
+    console.log(mail2);
+
+    const transactionObject = {
+
+        from : eth2,
+        to: document.getElementById("dress").value,
+        gas : 100000,
+        gasPrice : 20000000000,
+        value:web3.toWei(1, "ether")
+    };
+
+    var result = exhi.registration.sendTransaction(name2,number2,mail2, transactionObject, (error,result) => {console.log(result); });
+    partiP[eth2] = 1;
+
+  }
+
+   
+ 
+function blah() {
+
+
+var result = exhi.getParticipants.call( (error,result) => {console.log(result); });
+console.log(partiP);
+
+}
+
+     
+    </script>
+
+</body>
+</html>
+
+
+
+
+    </script>
+
+</body>
+</html>

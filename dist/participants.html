@@ -1,0 +1,444 @@
+
+
+
+<!--
+Front end for DAPP.
+Here we create few textboxes and buttons required.
+Then we link the buttons with the solidity functions.
+we can interact with the smartcontract on blockchain using web3.
+
+Owner @Sriharsha Bingi
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+    <title>Document</title>
+
+    <link href="main.css" rel="stylesheet">
+    
+    <script src="./node_modules/web3/dist/web3.min.js"></script>
+  
+</head>
+
+<video autoplay muted loop id="myVideo">
+  <source src="backgroundFull.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+<div class="content">
+  <h1 >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspWin like a James Bond</h1>
+  
+<body>
+ 
+      <h3>Participant's Info :</h3>
+ <header>
+    <div class="menu-btn">
+      <div class="btn-line"></div>
+      <div class="btn-line"></div>
+      <div class="btn-line"></div>
+    </div>
+
+    <nav class="menu">
+      <div class="menu-branding">
+        
+      </div>
+      <ul class="menu-nav">
+          <li class="nav-item current">
+          <a href="exhibition.html" class="nav-link">
+            Registration
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="participants.html" class="nav-link">
+            Participants
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="owner.html" class="nav-link">
+            Owner
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="orgainzer.html" class="nav-link">
+            Find Out Organizer
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  
+  <input type="text" name="name" class="question" id="Your_dress"  required autocomplete="off" />
+  <label for="nme"><span>What's your Eth Add?</span></label>
+  <br>
+  
+  <input type="button" class="Registerbutton" onclick ="CheckResult()"value="Check Results">
+  <br>
+  <br>
+  <br>
+  <input type="text" name="name" class="question" id="Your_dress_for_Wnr"  required autocomplete="off" />
+  <label for="nme"><span>What's your Eth Add?</span></label>
+  
+  <br>
+  
+  <input type="button" class="Registerbutton" onclick ="finWinner()"value="Find Out Winner">
+  <br>
+  <br>
+   <br>
+   <input type="text" name="name" class="question" id="Your_dress_for_parti"  required autocomplete="off" />
+  <label for="nme"><span>What's your Eth Add?</span></label>
+  
+  <br>
+  
+  <input type="button" class="Registerbutton" onclick ="knowparticipants()"value="Know Participants">
+  <br>
+  <br> <br>
+  <br>
+  <br> <br>
+  <br>
+  <br> <br>
+
+  
+
+
+
+
+
+
+
+        
+
+       
+
+       
+
+        
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+    <script>
+      
+
+
+
+   
+         web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
+
+
+
+
+
+        
+
+        //web3.eth.defaultAccount = web3.eth.accounts[0];
+
+         var ticketcontract = web3.eth.contract([
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "_name",
+                "type": "string"
+            },
+            {
+                "name": "_phone",
+                "type": "string"
+            },
+            {
+                "name": "_email",
+                "type": "string"
+            }
+        ],
+        "name": "registration",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            },
+            {
+                "name": "",
+                "type": "string"
+            },
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": true,
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "r",
+                "type": "uint256"
+            }
+        ],
+        "name": "getting",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "pure",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "getIsWinnerSelected",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [],
+        "name": "transferAmount",
+        "outputs": [],
+        "payable": true,
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "getParticipants",
+        "outputs": [
+            {
+                "name": "",
+                "type": "address[]"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [],
+        "name": "pickWinner",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "getWinner",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "getOrganizer",
+        "outputs": [
+            {
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "name": "rece",
+                "type": "string"
+            }
+        ],
+        "name": "receipti",
+        "type": "event"
+    }
+]);
+          var exhi = ticketcontract.at('0x0ced04e8484165dc9c115bd49cf75aed622298b7');//here goes the address where we deployed the contract
+        console.log(exhi);
+
+
+    //   $("#button").click(function () {     // on clicking the button the following code executes
+  //  $("#load").show();
+  
+  async function registering() {
+    
+    var eth2 = document.getElementById("dress").value;
+    var amount2 = document.getElementById("amnt").value;
+    var name2 = document.getElementById("name1").value;
+    var number2 = document.getElementById("number1").value;
+    var mail2 = document.getElementById("mail1").value;
+
+
+
+   await exhi.registration.sendTransaction(name2,number2,mail2,{from : eth2,
+       
+        gasPrice:web3.toWei(50, 'Gwei'),gas: 5000000, value:web3.toWei(amount2, "ether")
+    },(error,result) => {
+    if(error) {
+        return console.log(error);
+         
+    }
+    console.log("Thank you for your Review. Txhash for your Review: " + result);
+   
+    
+})
+    
+
+  }
+  async function sendamnt() {
+
+        await exhi.transferAmount.sendTransaction({from:document.getElementById("Transfering").value,gasPrice:web3.toWei(50, 'Gwei'),gas: 5000000, value:web3.toWei("1", "ether")
+    },(error,result) => {
+    if(error) {
+        return console.log(error);
+         
+    }
+    console.log("Thank you for your Review. Txhash for your Review: " + result);
+   
+    
+})
+    
+
+
+  }
+
+async function PickWinner() {
+
+        var eth3 = document.getElementById("owner_dress").value;
+        await exhi.pickWinner.sendTransaction({from:eth3},(error,result) => {
+    if(error) {
+        return console.log(error);
+         
+    }
+    console.log("Thank you for your Review. Txhash for your Review: " + result);
+   
+    
+})
+    
+
+
+  }
+   
+async function CheckResult() {
+     var eth4 = document.getElementById("Your_dress").value;
+     await exhi.getIsWinnerSelected.call({from:eth4},(error,result) => {
+    if(error) {
+        return console.log(error);
+         
+    }
+    console.log("I know you are tensed. Take a Chill Pill. It's Out? :" +result);
+   
+    
+})
+
+}
+ 
+
+async function CheckOrganizer() {
+     var eth5 = document.getElementById("Your_dress_for_Orgr").value;
+     await exhi.getOrganizer.call({from:eth5},(error,result) => {
+    if(error) {
+        return console.log(error);
+         
+    }
+    console.log("Thank you for Participating. Organizer: " + result);
+   
+    
+})
+
+}
+
+
+
+async function finWinner() {
+
+    var eth6 = document.getElementById("Your_dress_for_Wnr").value;
+    await exhi.getWinner.call({from:eth6},(error,result) => {
+    if(error) {
+        return console.log(error);
+         
+    }
+    console.log("Thank you for Participating. Organizer: " + result);
+   
+    
+})
+
+}
+
+async function knowparticipants() {
+
+    var eth7 = document.getElementById("Your_dress_for_parti").value;
+    await exhi.getParticipants.call({from:eth7},(error,result) => {
+    if(error) {
+        return console.log(error);
+         
+    }
+    console.log("Thank you for Participating. List: " + result);
+   
+    
+})
+
+}
+
+     
+    </script>
+<script>
+var video = document.getElementById("myVideo");
+var btn = document.getElementById("myBtn");
+
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+}
+</script>
+
+
+   <script src="js/main.js"></script> 
+   <script>
+// When the user clicks on div, open the popup
+function myFunction() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
+

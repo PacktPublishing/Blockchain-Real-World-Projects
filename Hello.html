@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" href="main.css">
+  <title>Contact Me</title>
+</head>
+
+<body>
+  <header>
+   
+  </header>
+
+  <main id="contact">
+
+    <h1 class="lg-heading">
+       Got Reviews 
+      <span class="text-secondary">for me?</span>
+    </h1>
+    
+
+
+
+
+
+
+
+        <!--This is the box set for writing the review (writeReview) @Owner :Sriharsha_Bingi-->
+
+
+
+
+    <h2 class="sm-heading">
+      &nbsp &nbsp &nbspGive all you got
+      <br>
+      &nbsp &nbsp &nbspYours,Critique Lover...
+    </h2>
+    <div class="boxes">
+      <div>
+        <span class="text-secondary"type="text">Ethereum Address: </span> 
+        <input id= "writereviewEth"type="text"  size= "4000" style="font-size: 18pt; height: 40px; width:280px;  background: transparent;border-color: #eece1a;">
+      </div>
+      <div>
+        <span class="text-secondary"type="text">Write your Review: </span> 
+        <input id="writereviewid"type="text"  size= "4000" style="font-size: 18pt; height: 40px; width:280px;  background: transparent;border-color: #eece1a;">
+      </div>
+
+      <button align="top"id="resumeborder" onclick="registering()" href="#"  style="height:auto;width:auto;font-size:200%; color:#eece1a;font-family:courier; background-color: Transparent;" class="button hvr-float-shadow">Submit !</button>
+
+      
+    </div>
+
+
+
+
+    <!--this for the transaction hash after wrtiting review ! @Owner :Sriharsha_Bingi-->
+
+
+
+
+    <div class="boxes">
+      <div>
+
+        <span id="TxhashID" style="margin: 10px auto;position: relative;"class="text-secondary">TxHash: </span>
+         
+      
+
+      </div>
+    </div class="boxes">
+
+
+
+
+
+
+
+    <!--This is another box set for seeing the review (seeReview) @Owner :Sriharsha_Bingi-->
+
+
+
+
+
+
+      <h2 class="sm-heading">
+      &nbsp &nbsp &nbsp
+      <br>
+      &nbsp &nbsp &nbspCheck a Review..
+    </h2>
+     
+
+    
+   <div class="boxes">
+    <div>
+
+        <span style="margin: 10px auto;position: relative;"class="text-secondary"type="text">Eth Address: </span>
+         <input id="reviewEth" type="text"  size= "4000" style="font-size: 18pt; height: 40px; width:280px;  background: transparent;border-color: #eece1a;"> 
+
+      </div>
+       <div>
+
+        <span style="margin: 10px auto;position: relative;"class="text-secondary"type="text">ID: </span>
+         <input id="findreviewid" type="text"  size= "4000" style="font-size: 18pt; height: 40px; width:280px;  background: transparent;border-color: #eece1a;"> 
+
+      </div>
+      <button align="top" id="resumeborder1" onclick="blah()" href="#" style="height:auto;width:auto;font-size:200%; color:#eece1a;font-family:courier; background-color: Transparent;" class="button hvr-float-shadow">Check it!</button>
+    </div>
+
+
+ <!--this for the result after checking a review ! @Owner :Sriharsha_Bingi-->
+
+
+    <br>
+    <br>
+    <br>
+
+    <div class="boxes">
+      <div>
+
+        <span id="checkresult" style="margin: 10px auto;position: relative;"class="text-secondary">Review: </span>
+         
+      
+
+      </div>
+    </div class="boxes">
+
+
+
+
+
+
+
+
+
+
+    <!--This is another box set for Liking the review (LikeReview) @Owner :Sriharsha_Bingi-->
+    
+
+
+
+
+
+
+      <br>
+      <br>
+      <br>
+      <h2 class="sm-heading">
+      &nbsp &nbsp &nbsp
+      <br>
+      &nbsp &nbsp &nbspLike a Review..
+    </h2>
+     
+
+    
+   <div class="boxes">
+    <div>
+
+        <span style="margin: 10px auto;position: relative;"class="text-secondary"type="text">Eth Address: </span>
+         <input id="likingEth" type="text"  size= "4000" style="font-size: 18pt; height: 40px; width:280px;  background: transparent;border-color: #eece1a;"> 
+
+      </div>
+       <div>
+
+        <span style="margin: 10px auto;position: relative;"class="text-secondary"type="text">ID: </span>
+         <input id="likenumber1" type="text"  size= "4000" style="font-size: 18pt; height: 40px; width:280px;  background: transparent;border-color: #eece1a;"> 
+
+      </div>
+      <div>
+
+        <span style="margin: 10px auto;position: relative;"class="text-secondary"type="text">Your Eth Address: </span>
+         <input id="likerEth" type="text"  size= "4000" style="font-size: 18pt; height: 40px; width:280px;  background: transparent;border-color: #eece1a;"> 
+
+      </div>
+      <button align="top" id="resumeborder2" onclick="Liking()" href="#" style="height:auto;width:auto;font-size:200%; color:#eece1a;font-family:courier; background-color: Transparent;" class="button hvr-float-shadow">Like it !</button>
+    </div>
+
+
+
+
+ <!--this for the result  after Liking a review ! @Owner :Sriharsha_Bingi-->
+
+
+    <br>
+    <br>
+    <br>
+
+    <div class="boxes">
+      <div>
+
+        <span id="Likeresult" style="margin: 10px auto;position: relative;"class="text-secondary">Nice Review eh: </span>
+         
+      
+
+      </div>
+    </div class="boxes">
+
+
+
+
+
+
+
+
+
+
+    <!--This is another box set for Counting the review (YourCount) @Owner :Sriharsha_Bingi-->
+      
+
+
+
+
+
+
+      <br>
+      <br>
+      <br>
+      <h2 class="sm-heading">
+      &nbsp &nbsp &nbsp
+      <br>
+      &nbsp &nbsp &nbspCount a Person's Reviews..
+    </h2>
+     
+
+    
+   <div class="boxes">
+    <div>
+
+        <span style="margin: 10px auto;position: relative;"class="text-secondary"type="text">Eth Address: </span>
+         <input id="countEth" type="text"  size= "4000" style="font-size: 18pt; height: 40px; width:280px;  background: transparent;border-color: #eece1a;"> 
+
+      </div>
+       <div>
+
+        <span style="margin: 10px auto;position: relative;"class="text-secondary"type="text">Your Eth Address: </span>
+         <input id="counterEth" type="text"  size= "4000" style="font-size: 18pt; height: 40px; width:280px;  background: transparent;border-color: #eece1a;"> 
+
+      </div>
+      <button align="top" id="resumeborder3" onclick="couts()" href="#"  style="height:auto;width:auto;font-size:200%; color:#eece1a;font-family:courier; background-color: Transparent;" class="button hvr-float-shadow">Count em!</button>
+    </div>
+
+
+
+
+ <!--this for the result after Counting the reviews ! @Owner :Sriharsha_Bingi-->
+
+
+    <br>
+    <br>
+    <br>
+
+    <div class="boxes">
+      <div>
+
+        <span id="Countresult" style="margin: 10px auto;position: relative;"class="text-secondary">Count: </span>
+         
+      
+
+      </div>
+    </div class="boxes">
+
+
+
+
+
+
+
+
+
+
+    <!--This is another box set for Searching a review by String. Cool eh !(SearchComment) @Owner :Sriharsha_Bingi-->
+      
+
+
+
+
+
+
+      <br>
+      <br>
+      <br>
+      <h2 class="sm-heading">
+      &nbsp &nbsp &nbsp
+      <br>
+      &nbsp &nbsp &nbspSearch who wrote that Reviews..
+    </h2>
+     
+
+    
+   <div class="boxes">
+    <div>
+
+        <span style="margin: 10px auto;position: relative;"class="text-secondary"type="text">What's the Review: </span>
+         <input id="searchString" type="text"  size= "4000" style="font-size: 18pt; height: 40px; width:280px;  background: transparent;border-color: #eece1a;"> 
+
+      </div>
+       <div>
+
+        <span style="margin: 10px auto;position: relative;"class="text-secondary"type="text">Your Eth Address: </span>
+         <input id="searcherEth" type="text"  size= "4000" style="font-size: 18pt; height: 40px; width:280px;  background: transparent;border-color: #eece1a;"> 
+
+      </div>
+      <button align="top" id="resumeborder4" onclick="searchReview()" href="#"  style="height:auto;width:auto;font-size:200%; color:#eece1a;font-family:courier; background-color: Transparent;" class="button hvr-float-shadow">Search that fella!</button>
+    </div>
+
+
+
+
+
+ <!--this for the result after Searching about the reviews ! @Owner :Sriharsha_Bingi-->
+
+
+    <br>
+    <br>
+    <br>
+
+    <div class="boxes">
+      <div>
+
+        <span id="searchreviewresult" style="margin: 10px auto;position: relative;"class="text-secondary">Review's ID,ADD: </span>
+         
+      
+
+      </div>
+    </div class="boxes">
+
+
+
+
+
+
+
+
+
+
+    <!--This is another box set for Removing a review (RemoveReview) @Owner :Sriharsha_Bingi-->
+      
+
+
+
+
+
+
+      <br>
+      <br>
+      <br>
+      <h2 class="sm-heading">
+      &nbsp &nbsp &nbsp
+      <br>
+      &nbsp &nbsp &nbspSorry bruh gotta take that off..
+    </h2>
+     
+
+    
+   <div class="boxes">
+    <div>
+
+        <span style="margin: 10px auto;position: relative;"class="text-secondary"type="text">Reviewer's Address: </span>
+         <input id="removeAddress" type="text"  size= "4000" style="font-size: 18pt; height: 40px; width:280px;  background: transparent;border-color: #eece1a;"> 
+
+      </div>
+       <div>
+
+        <span style="margin: 10px auto;position: relative;"class="text-secondary"type="text">Review ID: </span>
+         <input id="removeId" type="text"  size= "4000" style="font-size: 18pt; height: 40px; width:280px;  background: transparent;border-color: #eece1a;"> 
+
+      </div>
+      <button align="top" id="resumeborder5" onclick="removeReview()" href="#"  style="height:auto;width:auto;font-size:200%; color:#eece1a;font-family:courier; background-color: Transparent;" class="button hvr-float-shadow">Take that off!</button>
+    </div>
+
+
+
+
+
+ <!--this for the result after removing the reviews ! @Owner :Sriharsha_Bingi-->
+
+
+    <br>
+    <br>
+    <br>
+
+    <div class="boxes">
+      <div>
+
+        <span id="removereviewresult" style="margin: 10px auto;position: relative;"class="text-secondary">Which one?: </span>
+         
+      
+
+      </div>
+    </div class="boxes">
+
+
+
+
+
+
+
+  </main>
+
+  <footer id="main-footer">
+    Copyright &copy; 2018
+  </footer>
+
+ <script>
+      
+
+         web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
+
+        
+
+        //web3.eth.defaultAccount = web3.eth.accounts[0];
+
+         var ticketcontract = web3.eth.contract([
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "RemoveId",
+                "type": "uint256"
+            },
+            {
+                "name": "RemoveAddress",
+                "type": "address"
+            }
+        ],
+        "name": "RemoveReview",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "",
+                "type": "address"
+            },
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "name": "reviewlike",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint8"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "str",
+                "type": "string"
+            }
+        ],
+        "name": "SearchComment",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            },
+            {
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "tell",
+                "type": "string"
+            }
+        ],
+        "name": "WriteReview",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            },
+            {
+                "name": "",
+                "type": "address"
+            },
+            {
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "_add",
+                "type": "address"
+            }
+        ],
+        "name": "YourCount",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "",
+                "type": "address"
+            },
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "name": "reviews",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "getting",
+                "type": "address"
+            },
+            {
+                "name": "__id",
+                "type": "uint256"
+            }
+        ],
+        "name": "SeeReview",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "likeadd",
+                "type": "address"
+            },
+            {
+                "name": "__id",
+                "type": "uint256"
+            }
+        ],
+        "name": "LikeReview",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+    }
+]);         
+            var ver= web3.version;
+            console.log(ver);
+         //  var contractAddress= '0xfc0cb00994131ed82294df63a3152979a44dbb09';
+           //var reviewingc = web3.eth.contract(abi,contractAddress);
+           var exhi = ticketcontract.at('0x9dF8DC2996DaaED698298b39C37379a717ea44c4');//here goes the address where we deployed the contract
+        console.log(exhi);
+
+
+    //   $("#button").click(function () {     // on clicking the button the following code executes
+  //  $("#load").show();
+
+  async function registering() {
+    
+    var writereviewEth1 = document.getElementById("writereviewEth").value;
+    
+    var writereviewid1 = document.getElementById("writereviewid").value;
+    
+ 
+
+
+  await exhi.WriteReview.sendTransaction(
+    writereviewid1,
+{from:writereviewEth1,gasPrice:web3.toWei(50, 'Gwei'),gas: 5000000},
+(error,result) => {
+    if(error) {
+        return console.log(error);
+         
+    }
+    console.log("Thank you for your Review. Txhash for your Review: " + result);
+    document.getElementById('TxhashID').innerHTML = "TxHash: "+result;
+    
+}
+    );
+    //exhi.WriteReview(document.getElementById("name1").value,{from : document.getElementById("dress").value},function(error,result){ console.log(result) })
+    
+
+  }
+
+   
+
+// the address from which they are seeing they should create a transaction. so add a box which autofills the address of contract interactor.
+async function blah() {
+ 
+  
+    await  exhi.SeeReview
+    .call(
+      document.getElementById("reviewEth").value,
+      document.getElementById("findreviewid").value,
+      {from:document.getElementById("reviewEth").value,gasPrice:web3.toWei(400, 'Gwei'),gasLimit: "21000"},
+(error,result) => {
+    if(error) {
+        return console.log(error);
+    }
+    console.log("Review you searched: " + result);
+    document.getElementById('checkresult').innerHTML = "Review: "+result;
+}
+    );
+}
+      
+    
+
+
+async function couts() {
+
+
+    var countEth1 = document.getElementById("countEth").value; 
+    var counterEth1 = document.getElementById("counterEth").value; 
+  
+ await  exhi.YourCount.call(countEth1,{from:counterEth1,gasPrice:web3.toWei(40000, 'Gwei')},
+(error,result) => {
+    if(error) {
+        return console.log(error);
+    }
+    console.log( "Count of Reviews from that address : " +result);
+    document.getElementById('Countresult').innerHTML = "Count: "+result;
+}
+    );
+
+       
+    
+}
+
+async function Liking() {
+    
+    var likingEth1 = document.getElementById("likingEth").value;
+    
+    var likerEth1 = document.getElementById("likerEth").value;
+    var likenumber2 = document.getElementById("likenumber1").value;
+    
+
+
+ var likingResult = await exhi.LikeReview.sendTransaction(
+    likingEth1,likenumber2,
+{from:likerEth1,gasPrice:web3.toWei(50, 'Gwei'),gas: 5000000},
+(error,result) => {
+    if(error) {
+        return console.log(error);
+    }
+    console.log("Thank you for your support!"+likingResult + "Txhash: " + result);
+    document.getElementById('Likeresult').innerHTML = "Nice Review eh &#9786;: "+result;
+
+}
+    );
+    
+
+  }
+
+  async function searchReview() {
+
+    var searchString1 = document.getElementById("searchString").value;
+    var searcherEth1 = document.getElementById("searcherEth").value;
+
+    var SearchResult = await exhi.SearchComment.call(
+    searchString1,
+{from:searcherEth1,gasPrice:web3.toWei(50, 'Gwei'),gas: 5000000},
+(error,result) => {
+    if(error) {
+        return console.log(error);
+    }
+    console.log("This fella commented that: " + result);
+    document.getElementById('searchreviewresult').innerHTML = "Review's ID,ADD: "+result;
+
+}
+    );
+
+  }
+
+async function removeReview() {
+
+    var removeAddress1 = document.getElementById("removeAddress").value;
+    var removeId1 = document.getElementById("removeId").value;
+
+    var SearchResult = await exhi.RemoveReview.call(
+   removeId1,removeAddress1,
+{from:removeAddress1,gasPrice:web3.toWei(50, 'Gwei'),gas: 5000000},
+(error,result) => {
+    if(error) {
+        return console.log(error);
+    }
+    console.log("Yikes removed ?: " + result);
+    document.getElementById('removereviewresult').innerHTML = "Oh that One's Out?: "+result;
+
+}
+    );
+
+  }
+
+
+     
+    </script>
+</body>
+
+</html>
