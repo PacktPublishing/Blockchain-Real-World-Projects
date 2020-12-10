@@ -1,3 +1,8 @@
+## $5 Tech Unlocked 2021!
+[Buy and download this Video for only $ 5 on PacktPub.com](https://www.packtpub.com/product/blockchain-real-world-projects-video/9781788626217)
+-----
+*If you have used this book then please consider providing feedback via an [Amazon.com review](https://www.amazon.com/stores/page/736A73F2-DB6F-4FE3-94E5-D154AB1EC6B3). It is a helpful feedback to improve the quality of the title. The $5 campaign         runs from __December 15th 2020__ to __January 13th 2021__*
+
 
 # Blockchain Real World Projects [Video]
 This is the code repository for [Blockchain Real World Projects [Video]](https://www.packtpub.com/big-data-and-business-intelligence/blockchain-real-world-projects-video?utm_source=github&utm_medium=repository&utm_campaign=9781788626217), published by [Packt](https://www.packtpub.com/?utm_source=github). It contains all the supporting project files necessary to work through the video course from start to finish.
